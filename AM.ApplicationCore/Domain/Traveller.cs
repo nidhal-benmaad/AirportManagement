@@ -5,7 +5,14 @@ namespace AM.ApplicationCore.Domain
 	{
 		public string HealthInformation { get; set; }
 		public string Nationality { get; set; }
-		public Traveller()
+
+        public override void PassengerType()
+        {
+			//base.PassengerType();
+			Console.WriteLine("Je suis traveller");
+        }
+
+        public Traveller()
 		{
 		}
 	}
