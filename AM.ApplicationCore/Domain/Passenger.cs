@@ -1,11 +1,16 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace AM.ApplicationCore.Domain
 {
 	public class Passenger
 	{
-		public string PassportNumber { get; set; }
-		public string FirstName { get; set; }
-		public string LastName { get; set; }
+        //public int Id { get; set; }
+        [Key]
+        [StringLength(7)]
+        public string PassportNumber { get; set; }
+        [MinLength(3),MaxLength(25,ErrorMessage ="invalid")]
+		public Fullname Fullname { get; set; }
 		public DateTime BirthDate { get; set; }
 		public int TellNumber { get; set; }
 		public string EmailAddress { get; set; }
@@ -14,7 +19,7 @@ namespace AM.ApplicationCore.Domain
 		//polymorphism par signature
 		public bool checkProfile(string firstName, string lastName)
 		{
-			return FirstName.Equals(firstName) && LastName.Equals(lastName);
+			return Fullname.Firstname.Equals(firstName) && Fullname.Lastname.Equals(lastName);
 		}
         public bool checkProfile(string firstName, string lastName, string email)
         {

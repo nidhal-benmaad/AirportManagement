@@ -10,10 +10,19 @@
     <None Remove="Domain\" />
     <None Remove="Services\" />
     <None Remove="Interfaces\" />
+    <None Remove="NuGet.CommandLine" />
+    <None Remove="Microsoft.EntityFrameworkCore.Abstractions" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\" />
     <Folder Include="Services\" />
     <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.CommandLine" Version="6.0.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Abstractions" Version="6.0.10" />
   </ItemGroup>
 </Project>

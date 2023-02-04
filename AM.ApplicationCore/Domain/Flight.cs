@@ -11,6 +11,9 @@ namespace AM.ApplicationCore.Domain
 		public string Departure { get; set; }
 		public string Destination { get; set; }
 
+		public string MyProperty { get; set; }
+		public int PlaneFk { get; set; }
+
 		public Plane Plane { get; set; }
 
 		public ICollection<Passenger> Passengers { get; set; }

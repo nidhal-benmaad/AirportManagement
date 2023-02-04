@@ -85,6 +85,25 @@ namespace AM.ApplicationCore.Services
 
             return flight.Passengers.OfType<Traveller>().OrderBy(f => f.BirthDate).Take(3);
         }
+
+        public IEnumerable<IGrouping<string, Flight>> DestinationGroupedFlights()
+        {
+            var result = from f in Flights
+                         group f by f.Destination;
+
+
+            foreach (var item in result)
+            {
+                Console.WriteLine(item.Key);
+                foreach (var elem in item)
+                {
+                    Console.WriteLine(elem.FlightDate);
+                }
+            }
+
+            var lambda = Flights.GroupBy(fl => fl.Destination);
+            return  lambda;
+        }
     }
 }
 
